@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(8, 1, 95);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    font-size: larger;
+}
+h1{
+    text-align: center;
+}
+
+.form-container{
+    width: 500px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form+p{
+    
+    text-align: center;
+}
+input{
+    background-color: antiquewhite;
+    font-weight: bold;
+}
+input,button{
+    cursor: pointer;
+    border-radius: 5px;
+    border: unset;
+    padding: 15px 30px;
+    font-size: larger;
+}
+button{
+    background-color: aquamarine;
+}
+button:hover{
+    
+    background-color: antiquewhite;
+}
+/* clase para ocultar las labels pero siguen funcionando */
+.sr-only{
+    position: absolute;
+    left: 10000px;
+    top: auto;
+    width: 1px;
+    overflow: hidden;
+}
+.error{
+    color: red;
+    text-align: center;
+}
+.hidden{
+    display: none;
+}

@@ -1,0 +1,33 @@
+.container-hero {
+    background-color: black;
+}
+.fa-credit-card{
+    color: white;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.01rem 5rem;
+    color: white;
+    height: 2.5rem;
+}
+.container-navbar {
+    background-color: white;
+    color: rgb(10, 93, 165);
+}
+.navbar-content {
+    background-color: rgb(250, 250, 250);
+    color: rgb(10, 93, 165);
+    
+}
+.menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgb(10, 93, 165);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: auto;
+
+}

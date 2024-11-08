@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="carrusel.css">
+<title>Fragranza</title>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Moderustic:wght@300..800&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+<!-- Font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<!-- link swiper  -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Desplazamiento suave
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <div class="content-customer-support">
+                        <span class="text"> Hasta 12 cuotas sin intereses <i class="fa fa-credit-card "></i> </span>
+                    </div>
+                </div>
+
+                <div class="container-logo">
+                    <!-- <i class="fa-duotone fa-solid fa-gift"></i> -->
+                    <h2 class="logo"> <a class="titulo" href="index.html">Fragranza</a> </h2>
+                </div>
+
+                <div class="container-user">
+                    <!-- <i class="fa-solid fa-user"></i> -->
+                    <!-- <i class="fa-duotone fa-solid fa-basket-shopping"></i> -->
+
+                    <div class="content-shopping-cart">
+                        <span class="text"> Marcas seleccionadas </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+
+                <div class="navbar-content">
+                    <!-- <form class="search-form">
+                        <input type="search" placeholder="Buscar...">
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form> -->
+
+                    <i  class="fa-solid fa-bars menu-icon" ></i>
+                    <ul class="menu" id="menu-items">
+                        <li> <a href="index.html">Inicio </a> </li>
+                        <li> <a href="login">Log In </a> </li>
+                        <li> <a href="contacto.html">Contacto </a> </li>
+                        <li> <a href="#">About us </a> </li>
+                                                
+                    </ul>
+                    
+                </div>
+                
+            </nav>
+
+
+        </div>
+    </header>
+
+    <h1>Fragranza</h1>
+
+    <!-- <img class="portada" src="3c936ffc6ec37d2bb9ddef751a279d5862de65847e887be805f6c353ae58929974448.png" alt=""> -->
+
+    <section class="banner">
+        <div class="content-banner">
+            <p>Nueva Colección</p>
+            <h3>Primavera - Verano</h3>
+            <a href="#"> Comprar ahora</a>
+        </div>
+    </section>
+
+    <img class="gif" src="img/BT_BNE_DESK.webp" alt="">
+    <img class="gif2" src="img/bt_bomba_1.webp" alt="">
+
+    <section class="container container-features">
+        <div class="card-feature">
+
+        </div>
+    </section>
+
+    <p class="lanzamiento"> Suscríbete y se el primero en enterarte de lanzamientos, novedades y promociones</p>
+
+    <!-- PRODUCTOS NUEVOS  -->
+    <section id="newProducts">
+        <h2 id="nuevos-productos">Nuevos Productos</h2>
+        <div id="newProductsContainer"></div>
+    </section>
+
+    <h2 class="catalogo-perfumes"> Catálogo de Perfumes </h2>
+
+    <!-- shop content-->
+    <div class="card-products-container">
+        <div class="card-products" id="shopContent"></div>
+    </div>
+    <!-- cart button-->
+    <div class="cart-btn" id="cart-btn" onclick="scrollToTop()">🛒</div>
+    <!--cart counter-->
+    <span class="cart-counter" id="cart-counter">0</span>
+
+    <!--modal-->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-container" id="modal-container"></div>
+
+    <!-- En tu HTML, añade un enlace a Favoritos
+    <li id="li"><a href="#" onclick="displayFavorites()">Favoritos</a></li> -->
+
+
+    <!-- offertas -->
+    <section>
+        <section class="oferta">
+            <div class="offer">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="img/16 oferta.png" alt="">
+                        </div>
+                        <div class="col-2">
+                            <p class="oferta-exclusiva"> Oferta exclusiva </p>
+                            <h3 class="titulo-oferta">CAROLINA HERRERA - BAD BOY EXTREME</h3>
+                            <p class="p-oferta">Bad Boy Extreme de Carolina Herrera es una fragancia de la familia
+                                olfativa Oriental para Hombres.
+                                <br>Esta fragrancia es nueva. Bad Boy Extreme se lanzó en 2022.
+                                <br>Bad Boy Extreme fue creada por Quentin Bisch, Louise Turner y Yann Vasnier.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+    <!-- Carrusel de Novedades -->
+    <h2 class="catalogo-perfumes"> Novedades</h2> 
+    <section class="carrusel">
+        
+        <div class="containerCarrusel swiper">
+            <!-- <h1 class="titulo-carrusel">Novedades</h1> -->
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img class="card-image" src="img/carrusel/carrusel-1.png" alt="Card Image">
+                            <p class="badge Versace"> Versace </p>
+                            <h2 class="card-title"> VERSACE WOMAN E.D. PARFUM  </h2>
+                            <button class="card-button fa fa-arrow-right" aria-hidden="true"></button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img class="card-image" src="img/carrusel/carrusel-2.png" alt="Card Image">
+                            <p class="badge Dior"> Dior </p>
+                            <h2 class="card-title"> JEAN PAUL GAULTIER DIVINE  </h2>
+                            <button class="card-button fa fa-arrow-right" aria-hidden="true"></button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a class="card-link" href="">
+                            <img class="card-image" src="img/carrusel/carrusel-3.png" alt="Card Image">
+                            <p class="badge Jean"> Jean Paul Gaultier </p>
+                            <h2 class="card-title"> DIOR MAGIC HOMME cologne EDT </h2>
+                            <button class="card-button fa fa-arrow-right" aria-hidden="true"></button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a class="card-link" href="">
+                            <img class="card-image" src="img/carrusel/carrusel-4.png" alt="Card Image">
+                            <p class="badge Carolina"> Carolina Herrera </p>
+                            <h2 class="card-title"> GOODGIRL CAROLINA HERRERA </h2>
+                            <button class="card-button fa fa-arrow-right" aria-hidden="true"></button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a class="card-link" href="">
+                            <img class="card-image" src="img/carrusel/carrusel-5.png" alt="Card Image">
+                            <p class="badge Antonio"> Antonio Banderas </p>
+                            <h2 class="card-title"> SEDUCTION ANTONIO BANDERAS </h2>
+                            <button class="card-button fa fa-arrow-right" aria-hidden="true"></button>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <hr>
+    <footer class="footer container">
+        <div class="footer-links">
+            <div class="link">
+                <h3>Fragranza</h3>
+                <div class="socials">
+                    <!-- <img src="imagenes/whatsapp-logo-36.png" alt="Whatsapp"> -->
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <!-- <img src="imagenes/facebook-circle-logo-36.png" alt="Facebook"> -->
+                    <i class="fa-brands fa-facebook"></i>
+                    <!-- <img src="imagenes/instagram-logo-36.png" alt="Instagram">-->
+                    <i class="fa-brands fa-instagram"></i>
+
+                </div>
+            </div>
+
+            <div class="link">
+                <h3> Contáctanos </h3>
+                <ul>
+                    <li><a id="nro-telefono" href="#">Tél.: +54 9 2604 68-9332</a></li>
+                    <li><a id="nro-telefono" href="#">Tél.: +54 9 2604 09-5114</a></li>
+                </ul>
+                <br>
+                <br>
+                <div class="link" id="copyright">
+                    <p> &#169; 2024. Fragranza </p>
+
+                </div>
+            </div>
+
+            <div class="link" id="medios-de-pago">
+                <h3> Todos los medios de pago </h3>
+                <ul style="list-style-type: none;">
+                    <li>
+                        <p>Efectivo</p> <i class="fa-solid fa-money-bill-1-wave"></i>
+                    </li>
+                    <li>
+                        <p>Transferencia </p> <i class="fa-solid fa-money-bill-transfer"></i>
+                    </li>
+                    <li>
+                        <p>Débito</p> <i class="fa-brands fa-cc-visa"></i>
+                    </li>
+                    <li>
+                        <p>Crédito</p> <i class="fa-brands fa-cc-mastercard"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/index.js"></script>
+    <script type="module" src="mostrarProductos.js"></script>
+    <!-- <script src="../js/products.js"></script> -->
+    <!-- Link SwiperJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Link custom script  -->
+    <script src="carrusel.js"></script>
+    
+    <script src="navbar.js"></script>
+    <!-- <script src="cart.js"></script> -->
+    
+    
+
+</body>
+
+</html>
