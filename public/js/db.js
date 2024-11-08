@@ -3,11 +3,11 @@ import pg from "pg"; // IMPORTACION COMMONJS  ---- SOLUCION "IS A COMMON JS MODU
 
 export const pool = new pg.Pool({ //IMPORTACION COMMON JS
 
-    port: 5432,
-    host: "localhost",
+    port: 35832,
+    host: "postgres-mrsp.railway.internal",
     user: "postgres",
-    password: "admin",
-    database: "fragranze",
+    password: "ZllMMHvaNQDeIeZiQMGXpIJxGCawGNrf",
+    database: "railway",
 });
 
 pool.on("connect", () => {
