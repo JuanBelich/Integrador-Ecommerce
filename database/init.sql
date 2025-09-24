@@ -1,8 +1,7 @@
-CREATE TABLE usuarios (
+CREATE TABLE IF NOT EXISTS usuarios (
     id SERIAL PRIMARY KEY,
     user VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
+    gravatar VARCHAR(255)
 );
-
-ALTER TABLE usuarios ADD COLUMN gravatar VARCHAR(255)

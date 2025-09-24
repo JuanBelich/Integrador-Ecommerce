@@ -9,7 +9,9 @@
     "sourceMap": true
   },
   "scripts": {
-    "dev": "nodemon --exec node index.js"
+    "start": "node index.js",
+    "dev": "nodemon --exec node index.js",
+    "init-db": "node database/init-db.js"
   },
   "keywords": [],
   "author": "",

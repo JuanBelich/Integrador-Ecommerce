@@ -5,19 +5,26 @@ import path, { join } from "path";
 import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
 import { methods as authentication } from './public/js/authentication.controller.js';
-import bodyParser from "body-parser"
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import { testConnection } from './database/connection.js';
+
+// Cargar variables de entorno
+dotenv.config();
 
 //Constantes
-const client = new MercadoPagoConfig({accessToken: "TEST-8598427112739393-091023-77f6797dd4923ab9b7c83a9e446702e0-348195049"});
+const client = new MercadoPagoConfig({accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN});
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 
 
 
 //Server
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`El servidor esta corriendo en el puerto: ${port}`);
+  // Probar conexión a la base de datos
+  await testConnection();
 });
 
 ///CONFIGURACIONES
@@ -50,9 +57,15 @@ app.post("/create_preference", async (req, res) => {
         },
       ],
       back_urls: {
-        success: "http://127.0.0.1:5500/E-COMMERCE2024/client/media/index.html",
-        failure: "http://127.0.0.1:5500/E-COMMERCE2024/client/media/index.html",
-        pending: "http://127.0.0.1:5500/E-COMMERCE2024/client/media/index.html",
+        success: process.env.NODE_ENV === 'production' 
+          ? `${req.protocol}://${req.get('host')}/` 
+          : "http://127.0.0.1:5500/E-COMMERCE2024/client/media/index.html",
+        failure: process.env.NODE_ENV === 'production' 
+          ? `${req.protocol}://${req.get('host')}/` 
+          : "http://127.0.0.1:5500/E-COMMERCE2024/client/media/index.html",
+        pending: process.env.NODE_ENV === 'production' 
+          ? `${req.protocol}://${req.get('host')}/` 
+          : "http://127.0.0.1:5500/E-COMMERCE2024/client/media/index.html",
       },
       auto_return: "approved",
     };
