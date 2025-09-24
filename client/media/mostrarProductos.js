@@ -248,7 +248,12 @@ const displayCart = () => {
                     price: total,
                 };
 
-                const response = await fetch("http://localhost:8080/create_preference", {
+                // Detectar si estamos en desarrollo o producción
+                const baseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:8080' 
+                    : window.location.origin;
+                
+                const response = await fetch(`${baseUrl}/create_preference`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -259,7 +264,8 @@ const displayCart = () => {
                 const preference = await response.json();
                 createCheckoutButton(preference.id);
             } catch (error) {
-                alert("error :(");
+                console.error('Error al procesar el pago:', error);
+                alert("No hay una cuenta de Mercado Pago test asociada");
             }
         });
         const createCheckoutButton = (preferenceId) => {

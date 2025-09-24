@@ -76,9 +76,19 @@ app.post("/create_preference", async (req, res) => {
       id: result.id,
     });
   } catch (error) {
-    console.log(error);
+    console.error("Error al crear la preferencia de Mercado Pago:", error);
+    
+    // Verificar si es un error de token de acceso
+    if (error.message && error.message.includes('access_token')) {
+      return res.status(401).json({
+        error: "No hay una cuenta de Mercado Pago test asociada",
+        details: "Token de acceso inválido o expirado"
+      });
+    }
+    
     res.status(500).json({
-      error: "Error al crear la preferencia",
+      error: "Error al crear la preferencia de pago",
+      details: error.message || "Error interno del servidor"
     });
   }
 });
